@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0 !important;
+}
+
+.btn-pill {
+    border-radius: 5em;
+    border: 1px solid #165c7d;
+    color: #165c7d;
+}

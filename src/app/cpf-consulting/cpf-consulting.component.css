@@ -1,0 +1,34 @@
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+aside {
+  background-color: #165c7d;
+  width: 70px;
+  height: 100%;
+}
+
+.aside-container {
+  height: 95%;
+}
+
+i {
+  color: white;
+  font-size: 1.5em;
+}
+
+.fa-bell {
+  color: #165c7d;
+}
+
+.user-buttons {
+    height: 5vh;
+}
+
+.header {
+  padding: 1em;
+  width: 100%;
+  height: auto;
+}

@@ -6,6 +6,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
+    redirectTo: 'cpf'
+  },
+  {
+    path: 'cpf',
+    loadChildren: () => import('src/app/cpf-consulting/cpf-consulting.module').then((m) => m.CpfConsultingModule),
     component: CpfConsultingComponent
   }
 ];

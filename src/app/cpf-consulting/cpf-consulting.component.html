@@ -25,7 +25,7 @@
         <img src="assets/avatar.svg" widtd="50px" height="50px" class="ml-3" />
       </div>
     </div>
-    <div class="third-container">
+    <div class="third-container d-flex flex-column">
       <div class="p-4">
         <table class="justify-content-around w-50 mx-auto">
           <tr>
@@ -56,7 +56,7 @@
           </tr>
         </table>
       </div>
-      <div class="col-8 info-container">
+      <div class="info-container">
         <span class="header-info">Informe o CPF do futuro cooperado (a)</span>
         <br />
         <span class="info-text"
@@ -70,13 +70,32 @@
       </div>
       <div class="cpf-input-container mt-3 info-container">
         <span class="font-weight-bold">CPF</span><br />
-        <form (ngSubmit)="onSubmitCPF()" #cpfForm="ngForm">
-            <input type="text" placeholder="000.000.000-00" required/>
-            <button type="submit" class="btn-primary ml-3 py-1 px-4">Consultar por CPF</button>
+        <form (ngSubmit)="onSubmitCPF()" [formGroup]="formCPF">
+          <input
+            type="text"
+            ng-pattern="onlyNumbers"
+            (keypress)="numberOnly($event)"
+            [maxLength]="11"
+            placeholder="000.000.000-00"
+            formControlName="cpf"
+          />
+          <button
+            type="submit"
+            [disabled]="formCPF.invalid"
+            class="btn-primary ml-3 py-1 px-4"
+          >
+            Consultar por CPF
+          </button>
         </form>
-        <form (ngSubmit)="onSubmitCPF()" #form="ngForm">
-        </form>
+        <form (ngSubmit)="onSubmitCPF()" #form="ngForm"></form>
       </div>
+      <footer>
+        <div class="footer-buttons d-flex align-items-center">
+          <button class="btn-secondary py-2 px-4 ml-3">
+            <span>Dicas para admissão</span>
+          </button>
+        </div>
+      </footer>
     </div>
   </div>
 </div>

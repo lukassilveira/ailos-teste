@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CpfConsultingRoutingModule } from './cpf-consulting-routing.module';
 import { CpfConsultingComponent } from './cpf-consulting.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CpfConsultingRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CpfConsultingModule { }

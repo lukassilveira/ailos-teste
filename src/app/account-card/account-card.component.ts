@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'account-card',
@@ -9,7 +9,14 @@ export class AccountCardComponent implements OnInit {
 
   constructor() { }
 
+  @Input() account: any;
+
+  public type: string = '';
+  public number: string = '';
+
   ngOnInit(): void {
+    this.type = this.account.type;
+    this.number = this.account.number;
   }
 
 }

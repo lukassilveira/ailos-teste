@@ -1,1 +1,16 @@
-<p>account-card works!</p>
+<div class="account-result-card ml-3">
+    <div class="title-container d-flex flex-column mb-3">
+      <span class="font-weight-bold"> Conta {{ type }} <br /> </span>
+      <span class="minor-title"> Cooperativa Viacredi </span>
+    </div>
+    <div class="card-container d-flex align-items-center mb-3">
+      <i class="fa fa-credit-card pl-1 pr-3" aria-hidden="true"> </i>
+      <div class="texts d-flex flex-column">
+        <span class="minor-title">Número da conta <br /></span>
+        <span>{{ number }}</span>
+      </div>
+    </div>
+    <div>
+        <button class="btn">Duplicar conta</button>
+    </div>
+  </div>

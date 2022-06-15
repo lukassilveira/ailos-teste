@@ -1,33 +1,46 @@
 body {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .btn-pill {
-    border-radius: 5em;
-    border: 1px solid #165c7d;
-    color: #165c7d;
+  border-radius: 5em;
+  border: 1px solid #165c7d;
+  color: #165c7d;
 }
 
 .btn-primary {
-    background-color: #165c7d;
-    border: none;
+  background-color: #165c7d;
+  border: none;
 }
 
 .btn-primary:disabled {
-    background-color: #a3bcca !important;
+  background-color: #a3bcca !important;
 }
 
 .btn-secondary {
-    border: 2px solid #165c7d;
-    background-color: white;
+  border: 2px solid #165c7d;
+  background-color: white;
 }
 
 .btn-secondary:hover {
-    border: 2px solid #165c7d;
-    background-color: white;
+  border: 2px solid #165c7d;
+  background-color: white;
 }
 
-.btn-secondary>span {
-    font-weight: 500;
-    color: #165c7d;
+.btn-secondary > span {
+  font-weight: 500;
+  color: #165c7d;
+}
+
+.account-result-card {
+  width: 300px;
+  height: 220px;
+  background-color: white;
+  padding: 1.5em;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn,.btn:hover{
+  color:#2283b1;
+  font-weight: 500;
 }

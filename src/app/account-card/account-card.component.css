@@ -1,0 +1,12 @@
+.name-container > i {
+  font-size: 1.5em;
+}
+
+.card-container > i {
+  font-size: 1.25em;
+}
+
+.minor-title {
+  font-size: 0.8em;
+  color: #b8b8b8;
+}

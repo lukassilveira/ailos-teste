@@ -10,15 +10,20 @@ import { Observable } from 'rxjs';
 export class CpfConsultingComponent implements OnInit {
 
   private placeholderCustomers = [
-    { name: 'Mariane Sousa de Oliveira', cpf: '11122233344', situation:'Regular' }
+    {
+      name: 'Mariane Sousa de Oliveira', cpf: '11122233344', situation: 'Regular', accounts: [
+        { type: 'aplicação', number: '557932-4' },
+        { type: 'corrente', number: '778461-8' }
+      ]
+    }
   ]
-  
+
   private placeholderObservable = new Observable(object => {
     object.next(this.placeholderCustomers);
     object.complete();
   })
 
-  public currentCustomer = {};
+  public currentCustomer: any = {};
   public notFoundCostumerMessage: boolean = false;
 
   public formCPF: FormGroup = this.fb.group({
@@ -29,8 +34,6 @@ export class CpfConsultingComponent implements OnInit {
     private fb: FormBuilder
   ) { }
 
-
-
   /**
    * Delete after!
    *
@@ -39,7 +42,7 @@ export class CpfConsultingComponent implements OnInit {
   ngOnInit(): void {
     this.currentCustomer = this.placeholderCustomers[0];
   }
-  
+
   onSubmitCPF() {
     let cpfToBeSearched = this.formCPF.get('cpf')?.value;
     this.placeholderObservable.subscribe((data: any) => {
@@ -47,7 +50,6 @@ export class CpfConsultingComponent implements OnInit {
       if (this.currentCustomer) {
 
       } else {
-        console.log('no customer found!'); 
         this.notFoundCostumerMessage = true;
       }
     })

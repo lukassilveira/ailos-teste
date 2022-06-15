@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
   templateUrl: './cpf-consulting.component.html',
   styleUrls: ['./cpf-consulting.component.css']
 })
-export class CpfConsultingComponent {
+export class CpfConsultingComponent implements OnInit {
 
   private placeholderCustomers = [
-    { name: 'Mariane Sousa de Oliveira', cpf: '11122233344' }
+    { name: 'Mariane Sousa de Oliveira', cpf: '11122233344', situation:'Regular' }
   ]
   
   private placeholderObservable = new Observable(object => {
@@ -18,7 +18,8 @@ export class CpfConsultingComponent {
     object.complete();
   })
 
-  private currentCustomer = {};
+  public currentCustomer = {};
+  public notFoundCostumerMessage: boolean = false;
 
   public formCPF: FormGroup = this.fb.group({
     cpf: [null, Validators.compose([Validators.required, Validators.minLength(11), Validators.maxLength(11)])]
@@ -28,14 +29,26 @@ export class CpfConsultingComponent {
     private fb: FormBuilder
   ) { }
 
+
+
+  /**
+   * Delete after!
+   *
+   * @memberof CpfConsultingComponent
+   */
+  ngOnInit(): void {
+    this.currentCustomer = this.placeholderCustomers[0];
+  }
+  
   onSubmitCPF() {
     let cpfToBeSearched = this.formCPF.get('cpf')?.value;
     this.placeholderObservable.subscribe((data: any) => {
       this.currentCustomer = data.find((customer: any) => customer.cpf == cpfToBeSearched);
       if (this.currentCustomer) {
-        
+
       } else {
         console.log('no customer found!'); 
+        this.notFoundCostumerMessage = true;
       }
     })
   }

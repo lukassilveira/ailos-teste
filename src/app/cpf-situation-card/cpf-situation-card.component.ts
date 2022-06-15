@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cpf-situation-card',
@@ -9,7 +9,14 @@ export class CpfSituationCardComponent implements OnInit {
 
   constructor() { }
 
+  @Input() currentCustomer: any;
+
+  public name: string = '';
+  public situation: string = '';
+
   ngOnInit(): void {
+    this.name = this.currentCustomer.name;
+    this.situation = this.currentCustomer.situation;
   }
 
 }

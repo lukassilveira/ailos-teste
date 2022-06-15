@@ -68,7 +68,7 @@
           >Digite apenas os números (sem pontos ou traços).</span
         >
       </div>
-      <div class="cpf-input-container mt-3 info-container">
+      <div class="cpf-input-container my-3 info-container">
         <span class="font-weight-bold">CPF</span><br />
         <form (ngSubmit)="onSubmitCPF()" [formGroup]="formCPF">
           <input
@@ -87,7 +87,12 @@
         </form>
         <form (ngSubmit)="onSubmitCPF()" #form="ngForm"></form>
       </div>
-      <cpf-situation-card></cpf-situation-card>
+      <div class="result-container">
+        <div *ngIf="notFoundCostumerMessage" >
+          <span>CPF não encontrado na nossa base de dados!</span>
+        </div>
+        <cpf-situation-card *ngIf="currentCustomer" [currentCustomer]="currentCustomer"></cpf-situation-card>
+      </div>
       <footer>
         <div class="footer-buttons d-flex align-items-center">
           <button class="btn-secondary py-1 px-4 ml-3">

@@ -125,9 +125,18 @@ hr {
   font-size: 0.7em;
 }
 
+input{
+  width: 300px;
+}
+
 ::placeholder {
   color: #cecece;
   opacity: 0.75;
+}
+
+.result-container{
+  height: auto;
+  margin-left: 2em;
 }
 
 footer {

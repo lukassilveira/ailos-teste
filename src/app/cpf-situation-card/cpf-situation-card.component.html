@@ -1,1 +1,20 @@
-<p>cpf-situation-card works!</p>
+<div class="main-container">
+  <div class="title-container d-flex flex-column mb-3">
+    <span class="font-weight-bold"> Situação cadastral do CPF <br /> </span>
+    <span class="minor-title"> Consulta na Receita Federal </span>
+  </div>
+  <div class="name-container d-flex align-items-center mb-3">
+    <i class="fa fa-user px-3" aria-hidden="true"> </i>
+    <div class="texts d-flex flex-column">
+      <span class="minor-title">Nome <br /></span>
+      <span>{{ name }}</span>
+    </div>
+  </div>
+  <div class="situation-container d-flex align-items-center">
+    <i class="fa fa-thumbs-up px-3" aria-hidden="true" *ngIf="situation == 'Regular'"> </i>
+    <div class="texts d-flex flex-column">
+      <span class="minor-title"> Situação do CPF <br /></span>
+      <span>{{ situation }}</span>
+    </div>
+  </div>
+</div>

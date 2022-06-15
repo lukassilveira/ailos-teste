@@ -68,7 +68,7 @@
             />
             <button
               type="submit"
-              [disabled]="formCPF.invalid"
+              [disabled]="formCPF.invalid || hasCurrentCustomer"
               class="btn-primary ml-3 py-1 px-4"
             >
               Consultar por CPF

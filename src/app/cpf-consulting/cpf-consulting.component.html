@@ -1,17 +1,5 @@
 <div class="main-container">
-  <!-- extrair para componente -->
-  <!-- <aside class="d-flex flex-column align-items-center">
-    <div class="aside-container my-auto d-flex flex-column align-items-center">
-      <img src="assets/logo.png" widtd="45px" height="45px" />
-      <i class="fa fa-bars mt-4" aria-hidden="true"> </i>
-      <i class="fa fa-search mt-4" aria-hidden="true"> </i>
-      <i class="fa fa-star mt-4" aria-hidden="true"> </i>
-      <i class="fa fa-comment mt-4" aria-hidden="true"> </i>
-      <i class="fa fa-calculator mt-4" aria-hidden="true"> </i>
-      <i class="fa fa-bank mt-4" aria-hidden="true"> </i>
-    </div>
-  </aside> -->
-  <!--  -->
+  <nav-side-bar></nav-side-bar>
   <div class="second-container d-flex flex-column">
     <div class="header d-flex">
       <div class="col-8">
@@ -25,86 +13,94 @@
         <img src="assets/avatar.svg" widtd="50px" height="50px" class="ml-3" />
       </div>
     </div>
-    <div class="third-container d-flex flex-column">
-      <div class="p-4">
-        <table class="justify-content-around col-6 col-xl-5 mx-auto">
-          <tr>
-            <td><span class="dot-selected"></span></td>
-            <td><span class="dot"></span></td>
-            <td><span class="dot"></span></td>
-            <td><span class="dot"></span></td>
-          </tr>
-          <tr>
-            <td>
-              <hr class="hr-right-only" />
-              <span class="selected-step"> Início </span>
-            </td>
-            <td>
-              <hr class="hr-left-but-right" />
-              <hr class="hr-right" />
-              <span class="not-selected"> Documentos </span>
-            </td>
-            <td>
-              <hr class="hr-left-but-right" />
-              <hr class="hr-right" />
-              <span class="not-selected"> Dados cadastrais </span>
-            </td>
-            <td>
-              <hr class="hr-left" />
-              <span class="not-selected"> Admissão </span>
-            </td>
-          </tr>
-        </table>
-      </div>
-      <div class="info-container">
-        <span class="header-info">Informe o CPF do futuro cooperado (a)</span>
-        <br />
-        <span class="info-text"
-          >Se necessário, você poderá duplicar uma conta existente ou pausar e
-          retornar este cadastro futuramente.</span
-        >
-        <br />
-        <span class="info-text"
-          >Digite apenas os números (sem pontos ou traços).</span
-        >
-      </div>
-      <div class="cpf-input-container my-3 info-container">
-        <span class="font-weight-bold">CPF</span><br />
-        <form (ngSubmit)="onSubmitCPF()" [formGroup]="formCPF">
-          <input
-            type="text"
-            mask="000.000.000-00"
-            placeholder="000.000.000-00"
-            formControlName="cpf"
-          />
-          <button
-            type="submit"
-            [disabled]="formCPF.invalid"
-            class="btn-primary ml-3 py-1 px-4"
-          >
-            Consultar por CPF
-          </button>
-        </form>
-        <form (ngSubmit)="onSubmitCPF()" #form="ngForm"></form>
-      </div>
-      <div class="result-container">
-        <div *ngIf="notFoundCostumerMessage" >
-          <span>CPF não encontrado na nossa base de dados!</span>
+    <div class="container-from-footer">
+      <div class="third-container d-flex flex-column">
+        <div class="p-4">
+          <table class="justify-content-around col-6 col-xl-5 mx-auto">
+            <tr>
+              <td><span class="dot-selected"></span></td>
+              <td><span class="dot"></span></td>
+              <td><span class="dot"></span></td>
+              <td><span class="dot"></span></td>
+            </tr>
+            <tr>
+              <td>
+                <hr class="hr-right-only" />
+                <span class="selected-step"> Início </span>
+              </td>
+              <td>
+                <hr class="hr-left-but-right" />
+                <hr class="hr-right" />
+                <span class="not-selected"> Documentos </span>
+              </td>
+              <td>
+                <hr class="hr-left-but-right" />
+                <hr class="hr-right" />
+                <span class="not-selected"> Dados cadastrais </span>
+              </td>
+              <td>
+                <hr class="hr-left" />
+                <span class="not-selected"> Admissão </span>
+              </td>
+            </tr>
+          </table>
         </div>
-        <div class="result-cards">
-          <cpf-situation-card *ngIf="currentCustomer" [currentCustomer]="currentCustomer"></cpf-situation-card>
-          <div *ngFor="let account of currentCustomer.accounts">
-            <account-card [account]="account" (duplicateAccount)="receiveDuplicateAccountEvent($event)"></account-card>
+        <div class="info-container">
+          <span class="header-info">Informe o CPF do futuro cooperado (a)</span>
+          <br />
+          <span class="info-text"
+            >Se necessário, você poderá duplicar uma conta existente ou pausar e
+            retornar este cadastro futuramente.</span
+          >
+          <br />
+          <span class="info-text"
+            >Digite apenas os números (sem pontos ou traços).</span
+          >
+        </div>
+        <div class="cpf-input-container my-3 info-container">
+          <span class="font-weight-bold">CPF</span><br />
+          <form (ngSubmit)="onSubmitCPF()" [formGroup]="formCPF">
+            <input
+              type="text"
+              mask="000.000.000-00"
+              placeholder="000.000.000-00"
+              formControlName="cpf"
+            />
+            <button
+              type="submit"
+              [disabled]="formCPF.invalid"
+              class="btn-primary ml-3 py-1 px-4"
+            >
+              Consultar por CPF
+            </button>
+          </form>
+          <form (ngSubmit)="onSubmitCPF()" #form="ngForm"></form>
+        </div>
+        <div class="result-container">
+          <div *ngIf="notFoundCostumerMessage">
+            <span>CPF não encontrado na nossa base de dados!</span>
+          </div>
+          <div class="result-cards">
+            <cpf-situation-card
+              *ngIf="currentCustomer"
+              [currentCustomer]="currentCustomer"
+            ></cpf-situation-card>
+            <div *ngFor="let account of currentCustomer.accounts">
+              <account-card
+                [account]="account"
+                (duplicateAccount)="receiveDuplicateAccountEvent($event)"
+              ></account-card>
+            </div>
           </div>
         </div>
       </div>
-      <!-- <footer>
-        <div class="footer-buttons d-flex align-items-center">
+      <footer>
+        <div class="">
           <button class="btn-secondary py-1 px-4 ml-3">
             <span>Dicas para admissão</span>
           </button>
         </div>
-      </footer> -->
+      </footer>
     </div>
   </div>
 </div>

@@ -58,4 +58,13 @@ export class CpfConsultingComponent implements OnInit {
   receiveDuplicateAccountEvent(accountToReceive: any) {
     this.currentCustomer.accounts.push(accountToReceive);
   }
+
+  resetCustomer(){
+    this.currentCustomer = null;
+    this.formCPF.reset();
+  }
+
+  get hasCurrentCustomer(): boolean {
+    return this.currentCustomer ? true : false;
+  }
 }

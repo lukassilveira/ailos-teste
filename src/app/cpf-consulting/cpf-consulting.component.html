@@ -95,7 +95,10 @@
         </div>
       </div>
       <footer>
-        <div class="">
+        <div class="d-flex align-items-center">
+          <button class="btn-primary py-2 px-4 ml-3" (click)="resetCustomer()" *ngIf="hasCurrentCustomer">
+            <span>Iniciar nova admissão</span>
+          </button>
           <button class="btn-secondary py-1 px-4 ml-3">
             <span>Dicas para admissão</span>
           </button>

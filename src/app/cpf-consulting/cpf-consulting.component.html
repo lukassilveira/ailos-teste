@@ -73,9 +73,7 @@
         <form (ngSubmit)="onSubmitCPF()" [formGroup]="formCPF">
           <input
             type="text"
-            ng-pattern="onlyNumbers"
-            (keypress)="numberOnly($event)"
-            [maxLength]="11"
+            mask="000.000.000-00"
             placeholder="000.000.000-00"
             formControlName="cpf"
           />

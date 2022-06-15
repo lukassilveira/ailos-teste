@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CpfConsultingRoutingModule } from './cpf-consulting-routing.module';
 import { CpfConsultingComponent } from './cpf-consulting.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CpfConsultingRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
   ]
 })
 export class CpfConsultingModule { }

@@ -137,6 +137,7 @@ input{
 .result-container{
   height: auto;
   margin-left: 2em;
+  background-color: #e7eef1;
 }
 
 .result-cards{

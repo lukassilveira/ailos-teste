@@ -6,12 +6,14 @@ import { CpfConsultingComponent } from './cpf-consulting.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { CpfSituationCardComponent } from '../cpf-situation-card/cpf-situation-card.component';
+import { AccountCardComponent } from '../account-card/account-card.component';
 
 
 @NgModule({
   declarations: [
     CpfConsultingComponent,
-    CpfSituationCardComponent
+    CpfSituationCardComponent,
+    AccountCardComponent
   ],
   imports: [
     CommonModule,

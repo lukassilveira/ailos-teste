@@ -87,13 +87,15 @@
         </form>
         <form (ngSubmit)="onSubmitCPF()" #form="ngForm"></form>
       </div>
-      <div class="result-container d-flex align-items-center">
+      <div class="result-container">
         <div *ngIf="notFoundCostumerMessage" >
           <span>CPF não encontrado na nossa base de dados!</span>
         </div>
-        <cpf-situation-card *ngIf="currentCustomer" [currentCustomer]="currentCustomer"></cpf-situation-card>
-        <div *ngFor="let account of currentCustomer.accounts">
-          <account-card [account]="account"></account-card>
+        <div class="result-cards">
+          <cpf-situation-card *ngIf="currentCustomer" [currentCustomer]="currentCustomer"></cpf-situation-card>
+          <div *ngFor="let account of currentCustomer.accounts">
+            <account-card [account]="account" (duplicateAccount)="receiveDuplicateAccountEvent($event)"></account-card>
+          </div>
         </div>
       </div>
       <footer>

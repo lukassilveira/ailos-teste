@@ -54,4 +54,8 @@ export class CpfConsultingComponent implements OnInit {
       }
     })
   }
+
+  receiveDuplicateAccountEvent(accountToReceive: any) {
+    this.currentCustomer.accounts.push(accountToReceive);
+  }
 }

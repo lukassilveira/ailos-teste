@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'account-card',
@@ -11,6 +11,8 @@ export class AccountCardComponent implements OnInit {
 
   @Input() account: any;
 
+  @Output() duplicateAccount = new EventEmitter<any>();
+
   public type: string = '';
   public number: string = '';
 
@@ -19,4 +21,9 @@ export class AccountCardComponent implements OnInit {
     this.number = this.account.number;
   }
 
+  duplicateAccountEvent() {
+    this.duplicateAccount.emit(this.account);
+    console.log(this.account);
+    
+  }
 }

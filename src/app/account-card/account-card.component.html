@@ -1,4 +1,4 @@
-<div class="account-result-card ml-3">
+<div class="account-result-card">
     <div class="title-container d-flex flex-column mb-3">
       <span class="font-weight-bold"> Conta {{ type }} <br /> </span>
       <span class="minor-title"> Cooperativa Viacredi </span>
@@ -11,6 +11,6 @@
       </div>
     </div>
     <div>
-        <button class="btn">Duplicar conta</button>
+        <button class="btn" (click)="duplicateAccountEvent()">Duplicar conta</button>
     </div>
   </div>

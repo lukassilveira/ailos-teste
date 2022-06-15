@@ -139,6 +139,12 @@ input{
   margin-left: 2em;
 }
 
+.result-cards{
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  gap: 1em
+}
+
 footer {
   display: flex;
   width: 100%;
